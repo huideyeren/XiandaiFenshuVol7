@@ -1,36 +1,31 @@
-@use "../../variable/a6-tate-no-bleed";
-
 @charset "UTF-8";
+
+@use "../../variable/a5-yoko-common";
 
 /* 著者紹介 */
 .profile {
     font-size: 0.8em;
-    -webkit-writing-mode: a6-tate-no-bleed.$writing-mode;
-    -epub-writing-mode: a6-tate-no-bleed.$writing-mode;
-    writing-mode: a6-tate-no-bleed.$writing-mode;
-  
-    div.profile-content{
-        width: 100%;
-        -webkit-writing-mode: horizontal-tb;
-        -epub-writing-mode:   horizontal-tb;
-        writing-mode: horizontal-tb;
-        font-size: 7pt;
+    -webkit-writing-mode: a5-yoko-common.$writing-mode;
+    -epub-writing-mode: a5-yoko-common.$writing-mode;
+    writing-mode: a5-yoko-common.$writing-mode;
+
+    .writer {
+        display: flex;
+        margin-bottom: 1.5em;
 
         figure {
-            width: 120px !important;
-            float: top;
-            box-sizing: border-box;
-            writing-mode: horizontal-tb !important;
-            -webkit-writing-mode: horizontal-tb;
-            -epub-writing-mode: horizontal-tb;
+            width: 140px !important;
             margin-bottom: 20px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
 
             & > img {
-            display: block;
             width: 120px;
             height: 120px;
+            margin-left: auto;
+            margin-right: auto;
             box-sizing: border-box;
             }
 
@@ -41,26 +36,33 @@
             margin-bottom: 4pt;
             }
         }
-        div.profile-text {
-            h2 {
+
+        div.profile-content{
+            width: 100%;
+            -webkit-writing-mode: horizontal-tb;
+            -epub-writing-mode:   horizontal-tb;
+            writing-mode: horizontal-tb;
+            font-size: 7pt;
+
+            h2, h3, p {
                 text-indent: 0em;
             }
-        }
 
-        dl {
-            width: 100%;
-            dt {
-                width: 20%;
-                font-weight: 700;
-                float: left;
-                &::after {
-                    content: ": ";
+            dl {
+                width: 100%;
+                dt {
+                    width: 20%;
+                    font-weight: 700;
+                    float: left;
+                    &::after {
+                        content: ": ";
+                    }
                 }
-            }
 
-            dd {
-                margin-left: 25%;
-                width: 80%;
+                dd {
+                    margin-left: 25%;
+                    width: 80%;
+                }
             }
         }
     }

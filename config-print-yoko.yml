@@ -9,10 +9,10 @@ direction: "ltr"
 prt: ○○印刷所
 
 # 表紙と裏表紙は作らない
-cover: false
+cover: title.xhtml
 
 # 大扉は画像で作る
-titlefile: title.xhtml
+titlepage: false
 
 # 奥付は自作したXMTMLファイルを使う
 colophon: colophon.xhtml

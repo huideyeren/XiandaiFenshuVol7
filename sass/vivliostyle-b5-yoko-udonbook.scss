@@ -1,0 +1,26 @@
+@charset "UTF-8";
+// 変数
+@use 'variable/b5-yoko-common';
+// フォント関連
+@use 'yoko/fonts';
+// ページのスタイル定義
+@use 'yoko/format';
+// タイポグラフィのスタイル定義
+@use 'yoko/typography';
+// コンテンツのスタイル定義
+@use 'yoko/contents';
+// シンタックスハイライト
+@use 'common/rouge';
+
+@page {
+    size: b5-yoko-common.$paper-size;
+    bleed: 0;
+    // 行送り * 行数
+    width: b5-yoko-common.$content-width;
+    // フォントサイズ * 文字数
+    height: b5-yoko-common.$content-height;
+    margin: auto;
+    // margin-top: $ten;
+    // margin-bottom: $chi;
+    marks: none;
+}

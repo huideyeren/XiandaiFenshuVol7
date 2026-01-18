@@ -1,11 +1,11 @@
-@use "../variable/a6-tate-no-bleed";
-
 @charset "UTF-8";
+
+@use "../variable/a5-yoko-common";
 
 /* 著作者 */
 .author {
   display: block;
-  font-size: a6-tate-no-bleed.$base-font-size;
+  font-size: a5-yoko-common.$base-font-size;
   font-weight: bold;
   text-align: end;
 }
@@ -34,7 +34,7 @@ p > img, div > img, section > img {
 
   /* 3行あける */
 .line-03 {
-  margin-block-start: a6-tate-no-bleed.$base-line-height * 3;
+  margin-block-start: a5-yoko-common.$base-line-height * 3;
 }
   
 /* インデント解除 */
@@ -49,17 +49,16 @@ pre {
   -webkit-writing-mode: horizontal-tb;
   -epub-writing-mode: horizontal-tb;
   font-size: 6.5px;
-  width: a6-tate-no-bleed.$content-width * 0.9;
+  width: a5-yoko-common.$content-width * 0.9;
   margin: 0 auto;
   padding: 1rem;
   box-decoration-break: clone;
+  overflow-wrap: anywhere;
+  font-family: "Cica";
 
-  code {
-    border: 1px #aaa solid;
-    border-radius: 4px;
-    overflow-wrap: anywhere;
-    font-family: "Cica";
-    max-width: 100%;
+  &.cmd {
+    background: #000;
+    color: #fff;
   }
 }
 
@@ -72,8 +71,8 @@ div.note, div.memo, div.tip, div.info, div.warning, div.important, div.caution, 
 
 /* リスト */
 ul, ol {
-  margin-block-start: a6-tate-no-bleed.$base-line-height;
-  margin-block-end: a6-tate-no-bleed.$base-line-height;
+  margin-block-start: a5-yoko-common.$base-line-height;
+  margin-block-end: a5-yoko-common.$base-line-height;
   padding-inline-start: 1.5em;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -183,13 +182,12 @@ figure.tbl figcaption::before {
 
 /* 脚注 */
 .footnote {
+  float: footnote;
+  font-size: 80%;
+  text-indent: 0;
   counter-increment: footnote;
 }
-  
-.footnote::footnote-call, .footnote::footnote-marker {
-  content: "[" counter(footnote) "]";
-}
-  
+
 .footnote::footnote-call {
   font-size: 80%;
   margin: 0 .3rem;
@@ -197,5 +195,15 @@ figure.tbl figcaption::before {
   
 .footnote::footnote-marker {
   margin-right: .2rem;
+}
+
+/* 改ページ */
+/* hrで改ページ */
+hr.page-wrap {
+  break-before: page;
+  visibility: hidden;
+  margin: 0px;
+  padding: 0px;
+  height: 1px;
 }
 

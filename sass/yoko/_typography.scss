@@ -1,13 +1,15 @@
 @charset "UTF-8";
 
+@use "../variable/a5-yoko-common";
+
 html {
   /* フォント */
   font-family: 'Commissioner', 'Yakumono', "Noto Sans CJK jp", "Cica", sans-serif;
   font-weight: normal;
   /* 行末揃え */
   text-align: justify;
-  font-size: $base-font-size;
-  line-height: $base-line-height;
+  font-size: a5-yoko-common.$base-font-size;
+  line-height: a5-yoko-common.$base-line-height;
   /* 約物の調整 */
   text-spacing: space-first allow-end ideograph-alpha ideograph-numeric;
 }
@@ -22,7 +24,7 @@ h1 {
   /* 直後の改ページ・改段禁止 */
   break-after: avoid;
   // 3行取り
-  line-height: $base-line-height * 3;
+  line-height: a5-yoko-common.$base-line-height * 3;
 }
 h1.short {
   // タイトルが短い場合のスタイル
@@ -31,7 +33,7 @@ h1.short {
 
 .without-subsection {
   h1 {
-    padding-block-end: $base-line-height * 2;
+    padding-block-end: a5-yoko-common.$base-line-height * 2;
   }
 }
 
@@ -43,12 +45,12 @@ h2 {
   /* 直後の改ページ・改段禁止 */
   break-after: avoid;
   // 2行取り
-  line-height: $base-line-height * 2;
+  line-height: a5-yoko-common.$base-line-height * 2;
 }
 
 h1 + h2 {
   // 1行空け
-  margin-block-start: $base-line-height;
+  margin-block-start: a5-yoko-common.$base-line-height;
 }
 
 h3 {
@@ -59,7 +61,7 @@ h3 {
   /* 直後の改ページ・改段禁止 */
   break-after: avoid;
   // 2行取り
-  line-height: $base-line-height * 2;
+  line-height: a5-yoko-common.$base-line-height * 2;
 }
 
 ruby > rt {
@@ -70,6 +72,7 @@ p {
   text-indent: 1em;
   /* 段落先頭約物の調整、行末句読点ぶら下げあり */
   hanging-punctuation: first allow-end;
+  word-break: break-all;
 
   &.noindent {
     text-indent: 0;
